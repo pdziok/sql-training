@@ -112,6 +112,8 @@ from (
 group by winner_name
 order by wins_per_tournament desc
 ```
+  </p>
+</details>
 
 ## Find players that have the biggest average wins per tournament but played in at least 20
 
@@ -132,6 +134,8 @@ group by winner_name
 having count(*) >= 20
 order by wins_per_tournament desc
 ```
+  </p>
+</details>
 
 ## Find players that have the biggest average wins per tournament but played in at least 20 per decade
 
@@ -155,6 +159,8 @@ group by winner_name, decade
 having count(*) >= 20
 order by wins_per_tournament desc
 ```
+  </p>
+</details>
 
 ## Find player that on each decade have the biggest average wins per tournament but played in at least 20 
 
