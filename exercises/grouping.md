@@ -98,6 +98,9 @@ group by winner_name
 order by tournament_wins desc
 ```
 
+  </p>
+</details>
+
 ## Find players that won at least 20 tournaments
 
 Display player name & number of tournaments won
@@ -115,6 +118,9 @@ group by winner_name
 having tournament_wins >= 20
 order by tournament_wins desc
 ```
+
+  </p>
+</details>
 
 ## Count how many players that won at least 20 tournaments
 
@@ -135,6 +141,9 @@ from (
     having tournament_wins >= 20
 ) at_least_20
 ```
+
+  </p>
+</details>
 
 ## Find pairs of players (winners vs losers) that finished the game with the same result (who won vs who lost) 
 
