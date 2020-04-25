@@ -80,6 +80,62 @@ order by tournament_wins desc
   </p>
 </details>
 
+## Find players that won the most tournaments
+
+Field `round` represents what type of the match it was within given tournament.
+To win the tournament is to win the final. 
+
+<details>
+  <summary>Answer</summary>
+  <p>
+  
+```sql
+select winner_name,
+       count(*) tournament_wins
+from atp_matches
+where round = 'F'
+group by winner_name
+order by tournament_wins desc
+```
+
+## Find players that won at least 20 tournaments
+
+Display player name & number of tournaments won
+
+<details>
+  <summary>Answer</summary>
+  <p>
+  
+```sql
+select winner_name,
+       count(*) tournament_wins
+from atp_matches
+where round = 'F'
+group by winner_name
+having tournament_wins >= 20
+order by tournament_wins desc
+```
+
+## Count how many players that won at least 20 tournaments
+
+Display player name & number of tournaments won
+
+<details>
+  <summary>Answer</summary>
+  <p>
+  
+```sql
+select count(*)
+from (
+    select winner_name,
+           count(*) tournament_wins
+    from atp_matches
+    where round = 'F'
+    group by winner_name
+    having tournament_wins >= 20
+) at_least_20
+```
+
 ## Find pairs of players (winners vs losers) that finished the game with the same result (who won vs who lost) 
 
 <details>
