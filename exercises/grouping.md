@@ -1,6 +1,6 @@
 # Aggregating
 
-## Find players that won the most matches
+## 1. Find players that won the most matches
 
 <details>
   <summary>Answer</summary>
@@ -16,7 +16,7 @@ order by matches_won desc
   </p>
 </details>
 
-## Find players that won the most matches per given year
+## 2. Find players that won the most matches per given year
 
 `extract(year from <date|timestamp>)` will return year from date or timestamp
 
@@ -35,7 +35,7 @@ order by matches_won desc, year desc;
 </details>
 
 
-## Find players that won the most tournaments
+## 3. Find players that won the most tournaments
 
 Field `round` represents what type of the match it was within given tournament.
 To win the tournament is to win the final. 
@@ -56,7 +56,7 @@ order by tournament_wins desc
   </p>
 </details>
 
-## Find players that won the most tournaments and display tournaments which he/she won
+## 4. Find players that won the most tournaments and display tournaments which he/she won
  
 Tournament should inform about it's name and year, e.g. `Wimbledon (2008)`,
 
@@ -81,7 +81,7 @@ order by tournament_wins desc
 </details>
 
 
-## Find players that won at least 20 tournaments
+## 5. Find players that won at least 20 tournaments
 
 Display player name & number of tournaments won
 
@@ -103,7 +103,7 @@ order by tournament_wins desc
 </details>
 
 
-## Count how many players that won at least 20 tournaments
+## 6. Count how many players that won at least 20 tournaments
 
 Display player name & number of tournaments won
 
@@ -126,7 +126,7 @@ from (
   </p>
 </details>
 
-## Find pairs of players (winners vs losers) that finished the game with the same result (who won vs who lost) 
+## 7. Find pairs of players (winners vs losers) that finished the game with the same result (who won vs who lost) 
 
 <details>
   <summary>Answer</summary>
@@ -144,7 +144,7 @@ order by matches_played desc
   </p>
 </details>
 
-## Find players that have the biggest average wins per tournament 
+## 8. Find players that have the biggest average wins per tournament 
 
 <details>
   <summary>Answer</summary>
@@ -164,7 +164,7 @@ order by wins_per_tournament desc
   </p>
 </details>
 
-## Find players that have the biggest average wins per tournament but played in at least 20
+## 9. Find players that have the biggest average wins per tournament but played in at least 20
 
 <details>
   <summary>Answer</summary>
@@ -186,7 +186,7 @@ order by wins_per_tournament desc
   </p>
 </details>
 
-## Find players that have the biggest average wins per tournament but played in at least 20 per decade
+## 10. Find players that have the biggest average wins per tournament but played in at least 20 per decade
 
 <details>
   <summary>Answer</summary>
@@ -211,7 +211,7 @@ order by wins_per_tournament desc
   </p>
 </details>
 
-## Find player that on each decade have the biggest average wins per tournament but played in at least 20 
+## 11. Find player that on each decade have the biggest average wins per tournament but played in at least 20 
 
 <details>
   <summary>Answer</summary>
@@ -240,7 +240,7 @@ from (
   </p>
 </details>
 
-## Find pairs of players that played together the most often
+## 12. Find pairs of players that played together the most often
 
 Display how many times they played together
 
@@ -274,7 +274,7 @@ order by total_matches desc
   </p>
 </details>
 
-## Find pairs of players that played together the most often
+## 13. Find pairs of players that played together the most often
 
 Display how many times they played together and what is the ratio of wins to loses in order of player names, e.g.
 
