@@ -105,7 +105,7 @@ order by tournament_wins desc
 
 ## 6. Count how many players that won at least 20 tournaments
 
-Display player name & number of tournaments won
+Display count only
 
 <details>
   <summary>Answer</summary>
