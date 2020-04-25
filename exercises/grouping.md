@@ -56,11 +56,11 @@ order by tournament_wins desc
   </p>
 </details>
 
-## Find players that won the most tournaments and display tournaments which he won
+## Find players that won the most tournaments and display tournaments which he/she won
  
 Tournament should inform about it's name and year, e.g. `Wimbledon (2008)`,
 
-`STRING_AGG( expression, separator [order_by_clause] )`
+`string_agg( expression, separator [order_by_clause] )`
 
 
 <details>
