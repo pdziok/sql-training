@@ -80,26 +80,6 @@ order by tournament_wins desc
   </p>
 </details>
 
-## Find players that won the most tournaments
-
-Field `round` represents what type of the match it was within given tournament.
-To win the tournament is to win the final. 
-
-<details>
-  <summary>Answer</summary>
-  <p>
-  
-```sql
-select winner_name,
-       count(*) tournament_wins
-from atp_matches
-where round = 'F'
-group by winner_name
-order by tournament_wins desc
-```
-
-  </p>
-</details>
 
 ## Find players that won at least 20 tournaments
 
@@ -121,6 +101,7 @@ order by tournament_wins desc
 
   </p>
 </details>
+
 
 ## Count how many players that won at least 20 tournaments
 
