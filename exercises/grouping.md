@@ -16,9 +16,9 @@ order by matches_won desc
   </p>
 </details>
 
-## Find players that won the most matches in the given year
+## Find players that won the most matches per given year
 
-`extract(year from date|timestamp)` will return year from date or timestamp
+`extract(year from <date|timestamp>)` will return year from date or timestamp
 
 <details>
   <summary>Answer</summary>
