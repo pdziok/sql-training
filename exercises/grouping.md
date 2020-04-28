@@ -164,7 +164,7 @@ order by wins_per_tournament desc
   </p>
 </details>
 
-## 9. Find players that have the biggest average wins per tournament but played in at least 20
+## 9. Find players that have the biggest average wins per tournament but played in at least 20 tournaments
 
 <details>
   <summary>Answer</summary>
