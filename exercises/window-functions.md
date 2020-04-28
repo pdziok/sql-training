@@ -74,7 +74,7 @@ where player_rank <= 3
 
 ## Find the top 3 players for each year (2)
 
-Display each year as a single row enlisting all top 3 players, ordered by rank.
+Display each year as a single row enlisting all top 3 players with their rank and number of wins ordered by rank.
 
 Example:
 
