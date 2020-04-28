@@ -4,7 +4,7 @@
 
 List winner, loser, duration and rank
 
-`rank()` will display the ranking of records over ordered window. Rank will skip positions when 2 or more rows has same value by which ranking takes place
+`rank() over (order by <ranking field> asc|desc)` will display the ranking of records over ordered window. Rank will skip positions when 2 or more rows has same value by which ranking takes place
 
 <details>
   <summary>Answer</summary>
