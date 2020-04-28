@@ -1,8 +1,10 @@
 # Window functions
 
-## Rank the longest matches
+## 1. Rank the longest matches
 
 List winner, loser, duration and rank
+
+`rank()` will display the ranking of records over ordered window. Rank will skip positions when 2 or more rows has same value by which ranking takes place
 
 <details>
   <summary>Answer</summary>
@@ -20,7 +22,7 @@ List winner, loser, duration and rank
   </p>
 </details>
 
-## Rank players that won the most tournaments
+## 2. Rank players that won the most tournaments
 
 <details>
   <summary>Answer</summary>
@@ -43,7 +45,7 @@ from (
   </p>
 </details>
 
-## Find the top 3 players for each year
+## 3. Find the top 3 players for each year
 
 top 3 - players that won the most matches (disregarding the level)
 
@@ -72,7 +74,7 @@ where player_rank <= 3
   </p>
 </details>
 
-## Find the top 3 players for each year (2)
+## 4. Find the top 3 players for each year (2)
 
 Display each year as a single row enlisting all top 3 players with their rank and number of wins ordered by rank.
 
@@ -140,7 +142,7 @@ group by year
   </p>
 </details>
 
-## Take all players from 2018 and split them into 16 groups 
+## 5. Take all players from 2018 and split them into 16 groups 
 
 top 3 - players that won the most matches (disregarding the level)
 
@@ -170,7 +172,7 @@ from (
   </p>
 </details>
 
-## Find the top 3 players for each year and display how many matches they are behind the best player and previous player
+## 6. Find the top 3 players for each year and display how many matches they are behind the best player and previous player
 
 top 3 - players that won the most matches (disregarding the level)
 
@@ -202,7 +204,7 @@ where player_rank <= 3
   </p>
 </details>
 
-## Find top 1 players for each year and sort them by the percentage advantage they had on the second best player
+## 7. Find top 1 players for each year and sort them by the percentage advantage they had on the second best player
 
 assuming best = won the most matches
 
