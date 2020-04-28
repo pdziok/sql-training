@@ -72,6 +72,41 @@ where player_rank <= 3
   </p>
 </details>
 
+## Find the top 3 players for each year (2)
+
+Display each year as a single row enlisting all top 3 players, ordered by rank.
+
+Example:
+
+`1. Nowak Djokowic (65), 2. Roger Federer (52), 3. Andy Murray (35)`
+
+top 3 - players that won the most matches (disregarding the level)
+
+`extract(year from date|timestamp)` will return year from date or timestamp
+
+<details>
+  <summary>Answer</summary>
+  <p>
+  
+```sql
+select *
+from (
+         select *,
+                rank() over (partition by year order by wins desc) as player_rank
+         from (
+                  select winner_name,
+                         extract(year from tourney_date) as year,
+                         count(*)                        as wins
+                  from atp_matches
+                  group by winner_name, extract(year from tourney_date)
+              ) player_results_per_year
+     ) ranked_results
+where player_rank <= 3
+```
+  
+  </p>
+</details>
+
 ## Take all players from 2018 and split them into 16 groups 
 
 top 3 - players that won the most matches (disregarding the level)
