@@ -115,7 +115,7 @@ group by year
 
 or 
 
-```
+```sql
 with player_results_per_year as (
     select winner_name,
            extract(year from tourney_date) as year,
