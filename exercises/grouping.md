@@ -95,7 +95,7 @@ select winner_name,
 from atp_matches
 where round = 'F'
 group by winner_name
-having tournament_wins >= 20
+having count(*) >= 20
 order by tournament_wins desc
 ```
 
@@ -119,7 +119,7 @@ from (
     from atp_matches
     where round = 'F'
     group by winner_name
-    having tournament_wins >= 20
+    having count(*) >= 20
 ) at_least_20
 ```
 
