@@ -89,19 +89,23 @@ top 3 - players that won the most matches (disregarding the level)
   <p>
   
 ```sql
-select *
+select year, string_agg(player_rank || '. ' || winner_name || ' (' || wins || ')', ', ')
 from (
-         select *,
-                rank() over (partition by year order by wins desc) as player_rank
+         select *
          from (
-                  select winner_name,
-                         extract(year from tourney_date) as year,
-                         count(*)                        as wins
-                  from atp_matches
-                  group by winner_name, extract(year from tourney_date)
-              ) player_results_per_year
-     ) ranked_results
-where player_rank <= 3
+                  select *,
+                         rank() over (partition by year order by wins desc) as player_rank
+                  from (
+                           select winner_name,
+                                  extract(year from tourney_date) as year,
+                                  count(*)                        as wins
+                           from atp_matches
+                           group by winner_name, extract(year from tourney_date)
+                       ) player_results_per_year
+              ) ranked_results
+         where player_rank <= 3
+     ) ranked
+group by year
 ```
   
   </p>
