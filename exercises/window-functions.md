@@ -112,6 +112,30 @@ from (
      ) ranked
 group by year
 ```
+
+or 
+
+```
+with player_results_per_year as (
+    select winner_name,
+           extract(year from tourney_date) as year,
+           count(*)                        as wins
+    from atp_matches
+    group by winner_name, extract(year from tourney_date)
+),
+     ranked_players as (
+         select *, rank() over (partition by year order by wins desc) as player_rank
+         from player_results_per_year
+     ),
+     top3_players as (
+         select *
+         from ranked_players
+         where player_rank <= 3
+     )
+select year, string_agg(player_rank || '. ' || winner_name || ' (' || wins || ')', ', ') as top3
+from top3_players
+group by year
+```
   
   </p>
 </details>
@@ -121,6 +145,8 @@ group by year
 top 3 - players that won the most matches (disregarding the level)
 
 `extract(year from date|timestamp)` will return year from date or timestamp
+
+`ntile(num integer)` will split your results to `num` buckets/shards
 
 <details>
   <summary>Answer</summary>
