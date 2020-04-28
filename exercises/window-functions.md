@@ -51,6 +51,8 @@ top 3 - players that won the most matches (disregarding the level)
 
 `extract(year from date|timestamp)` will return year from date or timestamp
 
+`rank() over (partition by <partition field> order by <ranking field> asc|desc)` will display the ranking of records over ordered window. Rank will skip positions when 2 or more rows has same value by which ranking takes place. Partition field will be used to split results to windows which will be ranked
+
 <details>
   <summary>Answer</summary>
   <p>
