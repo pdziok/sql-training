@@ -78,7 +78,12 @@ Display each year as a single row enlisting all top 3 players, ordered by rank.
 
 Example:
 
-`1. Nowak Djokowic (65), 2. Roger Federer (52), 3. Andy Murray (35)`
+year | top3
+--- | ---
+1968 | 1. Arthur Ashe (34), 1. Tom Okker (34), 3. Rod Laver (33)
+1969 | 1. Tom Okker (63), 2. Rod Laver (62), 2. Tony Roche (62)
+1970 | 1. Rod Laver (85), 2. Cliff Richey (82), 3. Ken Rosewall (68), 3. Arthur Ashe (68)
+
 
 top 3 - players that won the most matches (disregarding the level)
 
@@ -89,7 +94,7 @@ top 3 - players that won the most matches (disregarding the level)
   <p>
   
 ```sql
-select year, string_agg(player_rank || '. ' || winner_name || ' (' || wins || ')', ', ')
+select year, string_agg(player_rank || '. ' || winner_name || ' (' || wins || ')', ', ') as top3
 from (
          select *
          from (
